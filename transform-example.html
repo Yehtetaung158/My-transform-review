@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform-dropdown-example </title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            margin: 20px;
+            border: solid 2px black;
+            display: flex;
+            justify-content: space-between;
+
+        }
+       .brand-title {
+        margin: 20px;
+        
+       }
+       .menu-box{
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+       }
+       .toggle-menu{
+        background-color: rgba(20, 4, 4, 0.562);
+        color: white;
+        font-size: 50px;
+        border: none;
+       }
+       header nav{
+        position: fixed;
+        right: 0;
+        bottom:0 ;
+        height: 100vh;
+        
+        border: solid black 2px;
+        width: 300px;
+        opacity: 1;
+        transform: translateX(120%);
+       }
+       .toggle-menu:focus + nav{
+        transform: translateX(0%);
+        transition-duration: 0.5s;
+        z-index: 100;
+       }
+       .menu-link{
+        display: block;
+        font-size: 2rem;
+        color: black;
+        margin: 0px;
+        border: 2px solid black;
+        padding: 20px;
+        background-color: wheat;
+        text-decoration:none; 
+        
+       }
+       .menu-link:hover{
+        z-index: 1000;
+        position: relative;
+        margin: 0px;
+        padding: 30px;
+        box-shadow:0 0  10px 10px rgb(48, 48, 3);
+        
+       }
+       .nac-bar-box{
+        overflow-y: auto;
+
+        background-color: gray;
+        box-shadow: 0 0 50px 5px rgba(70, 47, 47, 0.975);
+       }
+
+       /* ad-box */
+       .ad-box img{
+        width: 200px;
+        transform: translateX(-190px) rotate(30deg);
+       }
+       .ad-box img:nth-child(2){
+        transform: translateX(-190px) translateY(20px) rotate(30deg);
+
+       }
+       .ad-box img:nth-child(3){
+        transform: translateX(-190px) translateY(100px) rotate(30deg);
+
+       }
+       .ad-box img{
+        position: fixed;
+       }
+       .ad-box img:hover{
+        transform: translate(60px);
+        transition: 0.5s;
+        z-index: 100;
+
+        
+       }
+
+       .drop-box{
+margin-left: 200px;       }
+
+        .drop-menu{
+            padding: 20px;
+            background-color: chartreuse;
+            border-radius: 10px;
+            color: #f80ab1;
+            font-size: 20px;
+            position: relative;
+            
+        }
+        .dis{
+            display: none;
+            position: absolute;
+            pointer-events: none;
+        }
+        .drop-item{
+            border: 2px solid green;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            box-sizing: content-box;
+            width: 200px;
+            background-color: brown;
+            
+            }
+        .drop-menu:focus .dis{
+            display: block;
+            top: 110%;
+            pointer-events: all;
+
+        }    
+        
+        .drop-item a{
+
+            border: 2px solid green;
+            margin-right: 0px;
+            margin-left: 0px;
+            margin: 20px;
+            padding: 10px 30px;
+            text-decoration: none;
+            color: rgb(77, 55, 4);
+            background-color: yellow;
+        }
+
+        
+       
+    </style>
+</head>
+<body>
+    <header>
+         <h1 class="brand-title">MMS</h1>
+         <div class="menu-box">
+            <button class="toggle-menu">
+                <i class="bi bi-list"></i>
+             </button>
+             <nav class="nac-bar-box">
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                 <a href="#" class="menu-link">Home</a>
+                </nav>
+            </div>
+        </header>    
+        <div class="ad-box">
+            <img src="../assets-main/images/poe-mamhe-thar-2.jpg" alt="">
+            <img src="../assets-main/images/poe-mamhe-thar-6.jpg" alt="">
+            <img src="../assets-main/images/poe-mamhe-thar-3.jpeg" alt="">
+        </div>
+        <div class="drop-box">
+            <button class="drop-menu">Drop Menu
+
+                <div class="dis">
+                    <div class="drop-item">
+                        <a href="#">Menu One</a>
+                        <a href="#">Menu Two </a>
+                        <a href="#">Menu Three</a>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore minima numquam temporibus, nihil voluptate dolor et laboriosam esse sequi saepe voluptates dolores ratione sint minus praesentium, modi necessitatibus cupiditate aspernatur.</p>
+</body>
+</html>
